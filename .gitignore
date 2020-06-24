@@ -1,0 +1,7 @@
+.idea
+target
+LAB4.iml
+
+*.class
+*.properties
+*.cfg.xml
