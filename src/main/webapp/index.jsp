@@ -8,7 +8,7 @@
 нажмите кнопку ниже:
 
 <form action = "rulers" method="get">
-    <input type="submit" value="Начать работу с базой данных">
+    <input type="submit" value="rulers">
 </form>
 </body>
 </html>
