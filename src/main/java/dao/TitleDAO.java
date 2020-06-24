@@ -64,7 +64,7 @@ public class TitleDAO {
 
     public static Title findTitleByID(int id) {
         Session session = Factory.getSessionFactory().openSession();
-        
+
         Query query = session.createQuery("FROM Title WHERE id = :id");
         query.setParameter("id", id);
         Title title = (Title) query.getSingleResult();
