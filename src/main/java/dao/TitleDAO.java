@@ -41,6 +41,7 @@ public class TitleDAO {
     }
 
     public void deleteTitle(Title title){
+        System.out.println("its delete title metod");
         Session session = Factory.getSessionFactory().openSession();
         Transaction transaction = null;
         transaction = session.beginTransaction();
@@ -63,6 +64,7 @@ public class TitleDAO {
     }
 
     public static Title findTitleByID(int id) {
+        System.out.println("its find title metod");
         Session session = Factory.getSessionFactory().openSession();
 
         Query query = session.createQuery("FROM Title WHERE id = :id");

@@ -15,7 +15,19 @@
 
     <servlet-mapping>
         <servlet-name>RulerServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/rulers</url-pattern>
+        <url-pattern>/rulers/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TitleServlet</servlet-name>
+        <servlet-class>servlets.TitleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TitleServlet</servlet-name>
+        <url-pattern>/titles</url-pattern>
+        <url-pattern>/titles/*</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -23,9 +35,19 @@
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
     </filter>
 
+    <filter>
+        <filter-name>hiddenHttpMethodFilter2</filter-name> <!-- ????????  -->
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
     <filter-mapping>
         <filter-name>hiddenHttpMethodFilter</filter-name>
         <servlet-name>RulerServlet</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter2</filter-name>
+        <servlet-name>TitleServlet</servlet-name>
     </filter-mapping>
 
 </web-app>

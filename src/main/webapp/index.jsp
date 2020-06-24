@@ -10,5 +10,9 @@
 <form action = "rulers" method="get">
     <input type="submit" value="rulers">
 </form>
+
+<form action = "titles" method="get">
+    <input type="submit" value="titles">
+</form>
 </body>
 </html>
