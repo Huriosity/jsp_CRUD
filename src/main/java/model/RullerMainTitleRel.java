@@ -38,7 +38,7 @@ public class RullerMainTitleRel {
     //OneToMany Example
     // @Access(AccessType.PROPERTY)
     @ManyToOne
-    @JoinColumn(name = "title_id", referencedColumnName = "id",insertable = false, updatable = false)
+    @JoinColumn(name = "title_id", referencedColumnName = "id", nullable = false)
     private Title title;
 
     public Title getTitle() {

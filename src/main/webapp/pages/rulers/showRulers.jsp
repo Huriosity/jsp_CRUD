@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Список пpавителей</title>
 </head>
 <body>
@@ -71,6 +72,20 @@
                         </td>
 
                         <td>${title.getTitle().getName()}</td>
+                        <td>
+                            <form action = "pages/title/updateTitle.jsp" method="post">
+                                <input type="hidden" name="id" value="${title.getTitle().getId()}">
+                                <input type="hidden" name="name" value="${title.getTitle().getName()}">
+
+                                <input type="submit" value="Изменить" style="float:left">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="pages/title/deleteTitle.jsp" method="post">
+                                <input type="hidden" name="id" value="${title.getTitle().getId()}">
+                                <input type="submit" value="Удалить" style="float:left">
+                            </form>
+                        </td>
                     </c:when>
                 </c:choose>
             </c:forEach>

@@ -53,7 +53,10 @@ public class RulerTitleServlet extends HttpServlet {
 
         rullerMainTitleRel.setRuller_id(rulerID);
         rullerMainTitleRel.setRuler(RulerDAO.findRulerByID(rulerID));
+
         rullerMainTitleRel.setTitle(TitleDAO.findTitleByID(titleID));
+
+      //  rullerMainTitleRel.addRullerMainTitleRels(TitleDAO.findTitleByID(titleID));
         rullerMainTitleRel.setGot_the_title_in(gotTheTitleIn);
         rullerMainTitleRel.setLost_the_title_in(lostTheTitleIn);
 
