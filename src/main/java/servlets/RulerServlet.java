@@ -32,7 +32,7 @@ public class RulerServlet extends HttpServlet {
 
         List<Ruler> rulers = service.findAllRulers();
         req.setAttribute("rulers", rulers);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/showRulers.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/showRulers.jsp");
         dispatcher.forward(req, resp);
 
     }
@@ -64,7 +64,7 @@ public class RulerServlet extends HttpServlet {
             service.updateRuler(testator);
         }
 
-        resp.sendRedirect("/rulers");
+        resp.sendRedirect("http://localhost:8085/rulers");
     }
 
     @Override
@@ -94,14 +94,14 @@ public class RulerServlet extends HttpServlet {
             service.updateRuler(testator);
         }
 
-        resp.sendRedirect("/rulers");
+        resp.sendRedirect("http://localhost:8085/rulers");
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         service.deleteRuler(service.findRuler(id));
-        resp.sendRedirect("/rulers");
+        resp.sendRedirect("http://localhost:8085/rulers");
     }
 
 }

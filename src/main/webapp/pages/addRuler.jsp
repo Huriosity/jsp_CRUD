@@ -4,7 +4,7 @@
     <title>Добавить нового пpавителя</title>
 </head>
 <body>
-<form action = "rulers" method="post">
+<form action = "http://localhost:8085/rulers" method="post">
     <input required type="text" name="name" placeholder="Имя">
     <input required type="text" name="year_of_birth" placeholder="year_of_birth">
     <input required type="text" name="year_of_death" placeholder="year_of_death">

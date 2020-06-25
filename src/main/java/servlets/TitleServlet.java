@@ -30,7 +30,7 @@ public class TitleServlet extends HttpServlet {
 
         List<Title> titles = service.findAllTitles();
         req.setAttribute("titles", titles);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/showTitles.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/showTitles.jsp");
         dispatcher.forward(req, resp);
     }
 
