@@ -40,6 +40,10 @@
     </c:forEach>
 </table>
 
+<form action = "/">
+    <input type="submit" value="Home">
+</form>
+
 <form action = "pages/rulerTitle/addRulerTitle.jsp">
     <input type="submit" value="Добавить новый пpавитель/титyл">
 </form>

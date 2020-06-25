@@ -34,6 +34,10 @@
     </c:forEach>
 </table>
 
+<form action = "/">
+    <input type="submit" value="Home">
+</form>
+
 <form action = "pages/countries/addCountry.jsp">
     <input type="submit" value="Добавить новyю стpанy">
 </form>
