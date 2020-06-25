@@ -18,6 +18,7 @@
         <td>titleID</td>
         <td>Got_the_title_in</td>
         <td>Lost_the_title_in</td>
+        <td colspan = "2">Действия</td>
         <td>title name</td>
     </tr>
     <c:forEach items="${rulers}" var = "ruler">
@@ -52,6 +53,22 @@
                         <td>${title.getTitle().getId()}</td>
                         <td>${title.getGot_the_title_in()}</td>
                         <td>${title.getLost_the_title_in()}</td>
+                        <td>
+                            <form action = "pages/rulerTitle/updateRulerTitle.jsp" method="post">
+                                <input type="hidden" name="id" value="${title.getRuller_id()}">
+                                <input type="hidden" name="titleID" value="${title.getTitle().getId()}">
+                                <input type="hidden" name="Got_the_title_in" value="${title.getGot_the_title_in()}">
+                                <input type="hidden" name="Lost_the_title_in" value="${title.getLost_the_title_in()}">
+
+                                <input type="submit" value="Изменить" style="float:left">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="pages/rulerTitle/deleteRulerTitle.jsp" method="post">
+                                <input type="hidden" name="id" value="${title.getTitle().getId()}">
+                                <input type="submit" value="Удалить" style="float:left">
+                            </form>
+                        </td>
 
                         <td>${title.getTitle().getName()}</td>
                     </c:when>

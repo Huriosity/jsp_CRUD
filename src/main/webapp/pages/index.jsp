@@ -22,5 +22,9 @@
 <form action = "towns" method="get">
     <input type="submit" value="towns">
 </form>
+
+<form action = "rulerTitleRels" method="get">
+    <input type="submit" value="rulerTitleRels">
+</form>
 </body>
 </html>
