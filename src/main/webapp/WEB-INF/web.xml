@@ -56,6 +56,29 @@
 
     <!--   =====================================================  -->
 
+    <!--   =====================================================  -->
+    <servlet>
+        <servlet-name>TownServlet</servlet-name>
+        <servlet-class>servlets.TownServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TownServlet</servlet-name>
+        <url-pattern>/towns</url-pattern>
+        <url-pattern>/towns/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter4</filter-name> <!-- ????????  -->
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter4</filter-name>
+        <servlet-name>TownServlet</servlet-name>
+    </filter-mapping>
+    <!--   =====================================================  -->
+
     <filter>
         <filter-name>hiddenHttpMethodFilter</filter-name> <!-- ????????  -->
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>

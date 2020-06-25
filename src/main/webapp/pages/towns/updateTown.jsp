@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Изменить титyл</title>
+    <title>Изменить гоpод</title>
 </head>
 <body>
 
-Редактировать титyл
+Редактировать гоpод
 
-<form action="/titles/${param.id}" method="post">
+<form action="/towns/${param.id}" method="post">
     <input type="hidden" name = "id" value="${param.id}">
     <input type="text" name="name" value="${param.name}" placeholder=${param.name}>
 
