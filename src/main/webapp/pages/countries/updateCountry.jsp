@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Изменить титyл</title>
+    <title>Изменить стpанy</title>
 </head>
 <body>
 
-Редактировать титyл
+Редактировать стpанy
 
-<form action="/titles/${param.id}" method="post">
+<form action="/countries/${param.id}" method="post">
     <input type="hidden" name = "id" value="${param.id}">
     <input type="text" name="name" value="${param.name}" placeholder=${param.name}>
 
@@ -16,4 +16,4 @@
 </form>
 
 </body>
-</html>ф
+</html>

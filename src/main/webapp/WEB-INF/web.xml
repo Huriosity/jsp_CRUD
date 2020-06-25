@@ -30,6 +30,32 @@
         <url-pattern>/titles/*</url-pattern>
     </servlet-mapping>
 
+
+    <!--   =====================================================  -->
+    <servlet>
+        <servlet-name>CountryServlet</servlet-name>
+        <servlet-class>servlets.CountryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CountryServlet</servlet-name>
+        <url-pattern>/countries</url-pattern>
+        <url-pattern>/countries/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter3</filter-name> <!-- ????????  -->
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter3</filter-name>
+        <servlet-name>CountryServlet</servlet-name>
+    </filter-mapping>
+
+
+    <!--   =====================================================  -->
+
     <filter>
         <filter-name>hiddenHttpMethodFilter</filter-name> <!-- ????????  -->
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>

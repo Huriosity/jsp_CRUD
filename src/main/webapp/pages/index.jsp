@@ -14,5 +14,9 @@
 <form action = "titles" method="get">
     <input type="submit" value="titles">
 </form>
+
+<form action = "countries" method="get">
+    <input type="submit" value="countries">
+</form>
 </body>
 </html>
