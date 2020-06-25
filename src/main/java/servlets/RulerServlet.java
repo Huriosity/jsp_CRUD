@@ -41,7 +41,7 @@ public class RulerServlet extends HttpServlet {
         req.setAttribute("rulers", rulers);
         req.setAttribute("titles", titles);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/showRulers.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/rulers/showRulers.jsp");
         dispatcher.forward(req, resp);
 
     }

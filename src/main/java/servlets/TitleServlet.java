@@ -6,14 +6,12 @@ import services.TitleService;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-// import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-// @WebServlet("/titles")
 public class TitleServlet extends HttpServlet {
     private TitleService service = new TitleService();
 
@@ -30,7 +28,7 @@ public class TitleServlet extends HttpServlet {
 
         List<Title> titles = service.findAllTitles();
         req.setAttribute("titles", titles);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/showTitles.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/title/showTitles.jsp");
         dispatcher.forward(req, resp);
     }
 

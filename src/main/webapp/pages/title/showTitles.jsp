@@ -17,7 +17,7 @@
             <td>${title.getId()}</td>
             <td>${title.getName()}</td>
             <td>
-                <form action = "pages/updateTitle.jsp" method="post">
+                <form action = "pages/title/updateTitle.jsp" method="post">
                     <input type="hidden" name="id" value="${title.getId()}">
                     <input type="hidden" name="name" value="${title.getName()}">
 
@@ -25,7 +25,7 @@
                 </form>
             </td>
             <td>
-                <form action="pages/deleteTitle.jsp" method="post">
+                <form action="pages/title/deleteTitle.jsp" method="post">
                     <input type="hidden" name="id" value="${title.getId()}">
                     <input type="submit" value="Удалить" style="float:left">
                 </form>
@@ -38,7 +38,7 @@
     <input type="submit" value="Home">
 </form>
 
-<form action = "pages/addTitle.jsp">
+<form action = "pages/title/addTitle.jsp">
     <input type="submit" value="Добавить новый титyл">
 </form>
 </body>

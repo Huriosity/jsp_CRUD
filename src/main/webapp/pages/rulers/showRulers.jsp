@@ -29,7 +29,7 @@
             <td>${ruler.getYear_of_death()}</td>
             <td>${ruler.getTestator().getId()}</td>
             <td>
-                <form action = "pages/updateRuler.jsp" method="post">
+                <form action = "pages/rulers/updateRuler.jsp" method="post">
                     <input type="hidden" name="id" value="${ruler.getId()}">
                     <input type="hidden" name="name" value="${ruler.getName()}">
                     <input type="hidden" name="year_of_birth" value="${ruler.getYear_of_birth()}">
@@ -40,7 +40,7 @@
                 </form>
             </td>
             <td>
-                <form action="pages/deleteRuler.jsp" method="post">
+                <form action="pages/rulers/deleteRuler.jsp" method="post">
                     <input type="hidden" name="id" value="${ruler.getId()}">
                     <input type="submit" value="Удалить" style="float:left">
                 </form>
@@ -84,7 +84,7 @@
     <input type="submit" value="Home">
 </form>
 
-<form action = "pages/addRuler.jsp">
+<form action = "pages/rulers/addRuler.jsp">
     <input type="submit" value="Добавить нового пpавителя">
 </form>
 </body>
