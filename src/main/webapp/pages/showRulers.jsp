@@ -14,6 +14,11 @@
         <td>testatorID</td>
 
         <td colspan = "2">Действия</td>
+
+        <td>titleID</td>
+        <td>Got_the_title_in</td>
+        <td>Lost_the_title_in</td>
+        <td>title name</td>
     </tr>
     <c:forEach items="${rulers}" var = "ruler">
         <tr>
@@ -39,9 +44,28 @@
                     <input type="submit" value="Удалить" style="float:left">
                 </form>
             </td>
+
+            <%----%>
+            <c:forEach items="${titles}" var = "title">
+                <c:choose>
+                    <c:when test="${title.getRuler().getId() == ruler.getId()}">
+                        <td>${title.getTitle().getId()}</td>
+                        <td>${title.getGot_the_title_in()}</td>
+                        <td>${title.getLost_the_title_in()}</td>
+
+                        <td>${title.getTitle().getName()}</td>
+                    </c:when>
+                </c:choose>
+            </c:forEach>
+
+
         </tr>
     </c:forEach>
 </table>
+
+<form action = "/">
+    <input type="submit" value="Home">
+</form>
 
 <form action = "pages/addRuler.jsp">
     <input type="submit" value="Добавить нового пpавителя">

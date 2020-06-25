@@ -6,7 +6,7 @@ import model.Title;
 import java.util.List;
 
 public class TitleService {
-    private TitleDAO titleDAO = new TitleDAO();
+    private static TitleDAO titleDAO = new TitleDAO();
 
     public TitleService() {
 
@@ -28,7 +28,7 @@ public class TitleService {
         titleDAO.deleteTitle(title);
     }
 
-    public List<Title> findAllTitles() {
+    public static List<Title> findAllTitles() {
         return titleDAO.listTitles();
     }
 }

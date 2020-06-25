@@ -86,6 +86,7 @@ public class RulerDAO {
         transaction = session.beginTransaction();
 
         rulerId = (Integer) session.save(ruler);
+        session.evict(ruler);
 
         transaction.commit();
         session.close();
@@ -163,20 +164,21 @@ public class RulerDAO {
         Transaction transaction = null;
         transaction = session.beginTransaction();
 
-        session.update(ruler);
+
+
+        session.evict(ruler);
+        session.merge(ruler);
+        session.flush();
+
+        /*Ruler testator = ruler.getTestator();
+        testator.addRulerHeir(ruler);
+
+        session.evict(testator);
+        session.update(testator);*/
 
         transaction.commit();
         session.close();
 
-    }
-
-    public void startDeleteRuler(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Ruler id");
-        int id = InputUtils.getInt();
-        Ruler ruler = RulerDAO.findRulerByID(id);
-
-        deleteRuler(ruler);
     }
 
     public void deleteRuler(Ruler ruler){
@@ -197,10 +199,10 @@ public class RulerDAO {
 
         transaction = session.beginTransaction();
         List<Ruler> rulers = session.createQuery("FROM Ruler").list();
-        /*for (Ruler ruler : rulers) {
+        for (Ruler ruler : rulers) {
             System.out.println(ruler);
             System.out.println("\n================\n");
-        }*/
+        }
         session.close();
         return rulers;
     }

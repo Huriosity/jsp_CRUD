@@ -1,7 +1,12 @@
 package servlets;
 
+import dao.TitleDAO;
 import model.Ruler;
+import model.RullerMainTitleRel;
+import model.Title;
 import services.RulerService;
+import services.RulerTitleService;
+import services.TitleService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -31,7 +36,11 @@ public class RulerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<Ruler> rulers = service.findAllRulers();
+        List<RullerMainTitleRel> titles = RulerTitleService.findAllTitles();
+
         req.setAttribute("rulers", rulers);
+        req.setAttribute("titles", titles);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("pages/showRulers.jsp");
         dispatcher.forward(req, resp);
 
@@ -43,8 +52,8 @@ public class RulerServlet extends HttpServlet {
 
         System.out.println("вот тт");
         String name = req.getParameter("name");
-        Integer year_of_birth = Integer.parseInt(req.getParameter("year_of_birth"));
-        Integer year_of_death = Integer.parseInt(req.getParameter("year_of_death"));
+        Integer year_of_birth = com.github.Huriosity.InputUtils.getInteger(req.getParameter("year_of_birth"));
+        Integer year_of_death = com.github.Huriosity.InputUtils.getInteger(req.getParameter("year_of_death"));
         Integer testatorID    = com.github.Huriosity.InputUtils.getInteger(req.getParameter("testatorID"));
 
         Ruler ruler = new Ruler();
@@ -73,9 +82,8 @@ public class RulerServlet extends HttpServlet {
         Ruler ruler = service.findRuler(id);
 
         String name = req.getParameter("name");
-        Integer year_of_birth = Integer.parseInt(req.getParameter("year_of_birth"));
-        Integer year_of_death = Integer.parseInt(req.getParameter("year_of_death"));
-
+        Integer year_of_birth = com.github.Huriosity.InputUtils.getInteger(req.getParameter("year_of_birth"));
+        Integer year_of_death = com.github.Huriosity.InputUtils.getInteger(req.getParameter("year_of_death"));
         Integer testatorID    = com.github.Huriosity.InputUtils.getInteger(req.getParameter("testatorID"));
 
         ruler.setName(name);
@@ -85,12 +93,17 @@ public class RulerServlet extends HttpServlet {
         Ruler testator = null;
         if(testatorID != null) {
             testator = service.findRuler(testatorID);
-            ruler.setTestator(testator);
             testator.addRulerHeir(ruler);
+        } else {
+            ruler.setTestator(testator);
         }
 
+
+        System.out.println("ХАХАХАХА");
+        System.out.println(ruler);
         service.updateRuler(ruler);
         if(testator != null) {
+            // testator.addRulerHeir(ruler);
             service.updateRuler(testator);
         }
 

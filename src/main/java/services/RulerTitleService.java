@@ -7,7 +7,7 @@ import model.Title;
 import java.util.List;
 
 public class RulerTitleService {
-    private RulerTitleDAO rulerTitleDAO = new RulerTitleDAO();
+    private static RulerTitleDAO rulerTitleDAO = new RulerTitleDAO();
 
     public RulerTitleService() {
 
@@ -29,7 +29,7 @@ public class RulerTitleService {
         rulerTitleDAO.deleteRulerTitle(title);
     }
 
-    public List<RullerMainTitleRel> findAllTitles() {
+    public static List<RullerMainTitleRel> findAllTitles() {
         return rulerTitleDAO.listRullersMainTitle();
     }
 }

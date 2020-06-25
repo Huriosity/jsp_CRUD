@@ -11,8 +11,8 @@ public class RullerMainTitleRel {
     @Column(name = "ruller_id",nullable = false,unique = true)
     private int ruller_id;
 
-    @Column(name = "title_id",nullable = false,unique = false)
-    private int title_id;
+    /*@Column(name = "title_id",nullable = false,unique = false)
+    private int title_id;*/
 
     @Basic
     @Column(name = "got_the_title_in")
@@ -62,7 +62,7 @@ public class RullerMainTitleRel {
     }
 
     ///////////////////////////////////////
-    public int getTitle_id() {
+   /* public int getTitle_id() {
         return title_id;
     }
 
@@ -70,7 +70,7 @@ public class RullerMainTitleRel {
         System.out.println("=================================   " + title_id + " ======================================");
         this.title_id = title_id;
         System.out.println("=================================t2   " + this.title_id + " ======================================");
-    }
+    }*/
 
     ///////////////////////////////////////
     public Integer getGot_the_title_in() {
@@ -96,7 +96,7 @@ public class RullerMainTitleRel {
     public String toString() {
         return "RullerMainTitleRel:\n" +
                 "ruler id: " + ruller_id +
-                "\ntitle id : " + title_id + "\n" +
+                "\ntitle id : " + title.getId() + "\n" +
                 "got the title in: " + got_the_title_in + "\n" +
                 "lost the title in: " + lost_the_title_in + "\n";
     }

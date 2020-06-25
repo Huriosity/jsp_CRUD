@@ -24,7 +24,7 @@ public class Ruler {
     private Integer year_of_death;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne// (cascade = CascadeType.ALL)
     @JoinColumn(name = "testator", referencedColumnName = "id")
     private Ruler testator;
 
@@ -37,7 +37,7 @@ public class Ruler {
     }
 
     //OneToMany Example
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "testator",fetch = FetchType.EAGER)///////////////////////////////////////
+    @OneToMany(mappedBy = "id",fetch = FetchType.EAGER)/////////////////////////////////////// cascade = CascadeType.ALL
     // @ElementCollection(targetClass=Ruler.class)/////////////////
     private Set<Ruler> rulerHeirs = new HashSet<Ruler>();
 
