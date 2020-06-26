@@ -11,20 +11,14 @@ public class CountryCapitalTownRel {
     @Column(name = "id",nullable = false,unique = true)
     private int id;
 
-    @Column(name = "country_id",nullable = false)
-    private int country_id;
-
-   /* @Column(name = "town_id",nullable = false)
-    private int town_id;
-*/
     @Column(name = "capital_start_year")
     private Integer capital_start_year;
 
     @Column(name = "capital_end_year")
     private Integer capital_end_year;
 
-    @ManyToOne// (cascade = CascadeType.ALL)
-    @JoinColumn(name = "country_id", referencedColumnName = "id",insertable = false, updatable = false)
+    @ManyToOne
+    @JoinColumn(name = "country_id", referencedColumnName = "id",nullable = false)
     private Country country;
 
     public Country getCountry() {
@@ -36,8 +30,7 @@ public class CountryCapitalTownRel {
     }
 
 
-
-    @ManyToOne// (cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REFRESH)///////////////////////////////////////////////////////////////////
     @JoinColumn(name = "town_id", referencedColumnName = "id", nullable = false)
     private Town town;
 
@@ -59,23 +52,6 @@ public class CountryCapitalTownRel {
         this.id = id;
     }
 
-    /////////////////////////////////////////////////////////
-    public int getCountry_id() {
-        return country_id;
-    }
-
-    public void setCountry_id(int country_id) {
-        this.country_id = country_id;
-    }
-
-    /////////////////////////////////////////////////////////
-    /*public int getTown_id() {
-        return town_id;
-    }
-
-    public void setTown_id(int town_id) {
-        this.town_id = town_id;
-    }*/
 
     /////////////////////////////////////////////////////////
     public Integer getCapital_start_year() {
@@ -99,7 +75,7 @@ public class CountryCapitalTownRel {
     public String toString() {
         return "CountryCapitalTownRel:\n" +
                 "id: " + id +
-                "\ncountry id: " + country_id +
+                "\ncountry id: " + country.getId() +
                 "\ntown id : " + town.getId() + "" +
                 "\ntown name : " + town.getName() + "" +
                 "\ncapital_start_year : " + capital_start_year +

@@ -30,5 +30,9 @@
 <form action = "rulerCountryRels" method="get">
     <input type="submit" value="rulerCountryRels">
 </form>
+
+<form action = "countriesCapitals" method="get">
+    <input type="submit" value="countriesCapitals">
+</form>
 </body>
 </html>

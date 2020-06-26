@@ -6,7 +6,7 @@ import model.Town;
 import java.util.List;
 
 public class TownService {
-    private TownDAO townDAO = new TownDAO();
+    private static TownDAO townDAO = new TownDAO();
 
     public TownService() {
 
@@ -20,7 +20,7 @@ public class TownService {
         townDAO.saveTown(town);
     }
 
-    public void updateTown(Town town){
+    public static void updateTown(Town town){
         townDAO.updateTown(town);
     }
 

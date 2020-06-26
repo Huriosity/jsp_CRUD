@@ -125,6 +125,30 @@
     </filter-mapping>
     <!--   =====================================================  -->
 
+    <!--   =====================================================  -->
+
+    <servlet>
+        <servlet-name>CountryCapitalServlet</servlet-name>
+        <servlet-class>servlets.CountryCapitalServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CountryCapitalServlet</servlet-name>
+        <url-pattern>/countriesCapitals</url-pattern>
+        <url-pattern>/countriesCapitals/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter7</filter-name> <!-- ????????  -->
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter7</filter-name>
+        <servlet-name>CountryCapitalServlet</servlet-name>
+    </filter-mapping>
+    <!--   =====================================================  -->
+
 
 
     <filter>
