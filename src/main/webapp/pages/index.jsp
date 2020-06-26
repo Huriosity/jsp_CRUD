@@ -26,5 +26,9 @@
 <form action = "rulerTitleRels" method="get">
     <input type="submit" value="rulerTitleRels">
 </form>
+
+<form action = "rulerCountryRels" method="get">
+    <input type="submit" value="rulerCountryRels">
+</form>
 </body>
 </html>

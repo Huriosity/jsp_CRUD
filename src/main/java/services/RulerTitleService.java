@@ -2,7 +2,6 @@ package services;
 
 import dao.RulerTitleDAO;
 import model.RullerMainTitleRel;
-import model.Title;
 
 import java.util.List;
 

@@ -102,6 +102,31 @@
     </filter-mapping>
     <!--   =====================================================  -->
 
+    <!--   =====================================================  -->
+    <servlet>
+        <servlet-name>RulerCountryServlet</servlet-name>
+        <servlet-class>servlets.RulerCountryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RulerCountryServlet</servlet-name>
+        <url-pattern>/rulerCountryRels</url-pattern>
+        <url-pattern>/rulerCountryRels/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter6</filter-name> <!-- ????????  -->
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter6</filter-name>
+        <servlet-name>RulerCountryServlet</servlet-name>
+    </filter-mapping>
+    <!--   =====================================================  -->
+
+
+
     <filter>
         <filter-name>hiddenHttpMethodFilter</filter-name> <!-- ????????  -->
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
